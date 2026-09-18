@@ -1,0 +1,72 @@
+{
+  "info": {
+    "name": "Student Management System API",
+    "_postman_id": "8aa2ad78-0f47-4b3d-b0a5-3d3b9afc0001",
+    "description": "CRUD API tests for the Student Management System college project.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://127.0.0.1:8000"
+    },
+    {
+      "key": "studentId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create Student",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Sample Student\",\n  \"register_number\": \"23ECE001\",\n  \"email\": \"sample@example.com\",\n  \"department\": \"ECE\",\n  \"year\": 2,\n  \"cgpa\": \"8.25\"\n}"
+        },
+        "url": "{{baseUrl}}/api/students/"
+      }
+    },
+    {
+      "name": "Read All Students",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/students/"
+      }
+    },
+    {
+      "name": "Read One Student",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/students/{{studentId}}/"
+      }
+    },
+    {
+      "name": "Update Student",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Sample Student Updated\",\n  \"register_number\": \"23ECE001\",\n  \"email\": \"sample@example.com\",\n  \"department\": \"ECE\",\n  \"year\": 2,\n  \"cgpa\": \"8.50\"\n}"
+        },
+        "url": "{{baseUrl}}/api/students/{{studentId}}/"
+      }
+    },
+    {
+      "name": "Delete Student",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/students/{{studentId}}/"
+      }
+    },
+    {
+      "name": "Search Students",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/students/?search=ECE"
+      }
+    }
+  ]
+}
