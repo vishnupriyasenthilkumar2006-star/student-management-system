@@ -74,12 +74,3 @@ A complete CRUD-based full-stack web application built with:
   "cgpa": "8.04"
 }
 ```
-
-## GitHub
-
-Do not upload:
-- `venv/`
-- `.env`
-- passwords or secret keys intended for production
-
-The included `.gitignore` already excludes common local files.
